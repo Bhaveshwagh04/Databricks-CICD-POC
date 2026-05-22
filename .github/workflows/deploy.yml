@@ -50,11 +50,11 @@ jobs:
           fi
  
       # ✅ Step 7: Trigger Job2 (etl_job1.py)
-      # - name: Trigger Job2
-      #   run: |
-      #     if grep -q "notebooks/etl_job1.py" files.txt; then
-      #       echo "✅ Triggering Job2"
-      #       databricks jobs run-now --job-id 109514205917996
-      #     else
-      #       echo "❌ Job2 not changed"
-      #     fi
+      - name: Trigger Job2
+        run: |
+          if grep -q "notebooks/etl_job1.py" files.txt; then
+            echo "✅ Triggering Job2"
+            databricks jobs run-now --job-id 934389963239216
+          else
+            echo "❌ Job2 not changed"
+          fi
